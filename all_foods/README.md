@@ -1,5 +1,9 @@
 # all_foods
 
+### Categories
+Надо попробовать вынести ListView.saparated в отдельный блок,  
+то есть создать список заранее.
+
 Flutter Training
 
 ## Getting Started
