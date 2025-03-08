@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 
 class Recommendation {
   String title;
-  String info;
   String iconPath;
+  String level;
+  String duration;
+  String colorie;
   Color boxColor;
+  bool isSelected;
 
   Recommendation({
     required this.title,
-    required this.info,
     required this.iconPath,
+    required this.level,
+    required this.duration,
+    required this.colorie,
+    required this.isSelected,
     required this.boxColor,
   });
 
@@ -18,19 +24,25 @@ class Recommendation {
 
     recommendations.add(
         Recommendation(
-          title: 'Canai Bread',
-          info: 'Easy | 20mins | 230kCal',
-          iconPath: 'assets/icons/body/recommendations/canai_bread.svg',
-          boxColor: const Color(0xFFE3D5FF),
+          title: 'Honey Pancake',
+          iconPath: 'assets/icons/body/recommendations/honey_pancake.svg',
+          level: 'Easy',
+          duration: '30mins',
+          colorie: '180kCal',
+          isSelected: true,
+          boxColor: const Color(0xFF9CD6FF),
         )
     );
 
     recommendations.add(
         Recommendation(
-          title: 'Honey Pancake',
-          info: 'Easy | 30mins | 180kCal',
-          iconPath: 'assets/icons/body/recommendations/honey_pancake.svg',
-          boxColor: const Color(0xFF9CD6FF),
+          title: 'Canai Bread',
+          iconPath: 'assets/icons/body/recommendations/canai_bread.svg',
+          level: 'Easy',
+          duration: '30mins',
+          colorie: '180kCal',
+          isSelected: true,
+          boxColor: const Color(0xFFE3D5FF),
         )
     );
 

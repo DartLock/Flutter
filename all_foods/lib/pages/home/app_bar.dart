@@ -4,7 +4,15 @@ import 'package:flutter_svg/svg.dart';
 class AppBarMenuBox extends Container {
   late String icon;
 
-  @override BoxDecoration decoration = BoxDecoration(
+  AppBarMenuBox({super.key, decoration, icon}) : super(
+    constraints: const BoxConstraints(maxWidth: 25, maxHeight: 25),
+    alignment: Alignment.center,
+    child: SvgPicture.asset(icon, height: 25, width: 25,),
+  );
+}
+
+AppBar appBar() {
+  BoxDecoration decoration = BoxDecoration(
     color: const Color(0xFFC6C6C6),
     borderRadius: BorderRadius.circular(10),
     boxShadow: const [
@@ -18,18 +26,10 @@ class AppBarMenuBox extends Container {
     ],
   );
 
-  AppBarMenuBox({super.key, icon}) : super(
-    constraints: const BoxConstraints(maxWidth: 25, maxHeight: 25),
-    alignment: Alignment.center,
-    child: SvgPicture.asset(icon, height: 25, width: 25,),
-  );
-}
-
-AppBar appBar() {
   Container appBarArrowLeft = Container(
     margin: const EdgeInsets.all(0),
     alignment: Alignment.center,
-    child: AppBarMenuBox(icon: "assets/icons/app_bar/arrow_left.svg",),
+    child: AppBarMenuBox(decoration: decoration, icon: "assets/icons/app_bar/arrow_left.svg",),
   );
   Container appBarDotMenu = Container(
     margin: const EdgeInsets.all(10),
