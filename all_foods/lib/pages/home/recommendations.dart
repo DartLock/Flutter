@@ -5,6 +5,33 @@ import 'package:all_foods/models/recommendation.dart';
 Column recommendations() {
   List<Recommendation> recommendation = Recommendation.getRecommendation();
 
+  Container _buttonView(recommendation) {
+    return Container( // Button View
+      height: 45,
+      width: 130,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            recommendation.isSelected ? Color(0xFF9DCEFF) : Colors.transparent,
+            recommendation.isSelected ? Color(0xFF92A3FD) : Colors.transparent,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Center(
+        child: Text(
+          textAlign: TextAlign.center,
+          'View',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            color: recommendation.isSelected ? Color(0xFFCEE9FF) : Colors.transparent,
+            fontSize: 14,
+          ),
+        ),
+      ),
+    );
+  }
+
   return Column( // Category
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -31,11 +58,16 @@ Column recommendations() {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column( // Category Child Sub Items
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   recommendation[index].icon,
-                  recommendation[index].title,
-                  recommendation[index].info,
+                  Column(
+                    children: [
+                      recommendation[index].title,
+                      recommendation[index].info,
+                    ],
+                  ),
+                  _buttonView(recommendation[index]),
                 ],
               ),
             );
