@@ -14,6 +14,7 @@ class Category {
 
   static List<Category> getCategories() {
     List<Category> categories = [];
+    List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
 
     SvgPicture saladIcon = SvgPicture.asset('assets/icons/body/categories/salad.svg');
     SvgPicture cakeIcon = SvgPicture.asset('assets/icons/body/categories/cake.svg');
@@ -21,17 +22,11 @@ class Category {
     SvgPicture pancakeIcon = SvgPicture.asset('assets/icons/body/categories/pancake.svg');
     SvgPicture smoothieIcon = SvgPicture.asset('assets/icons/body/categories/smoothie.svg');
 
-    Color saladColor = const Color(0xFF81FD4C);
-    Color cakeColor = const Color(0xFFA16732);
-    Color pieColor = const Color(0xFFD6883F);
-    Color pancakeColor = const Color(0xFFFDF59F);
-    Color smoothieColor = const Color(0xFF89FFFF);
-
-    Category saladCategory = Category(name: 'Salad', icon: saladIcon, boxColor: saladColor,);
-    Category cakeCategory = Category(name: 'Cake', icon: cakeIcon, boxColor: cakeColor,);
-    Category pieCategory = Category(name: 'Pie', icon: pieIcon, boxColor: pieColor,);
-    Category pancakeCategory = Category(name: 'Pancake', icon: pancakeIcon, boxColor: pancakeColor,);
-    Category smoothieCategory = Category(name: 'Smoothie', icon: smoothieIcon, boxColor: smoothieColor,);
+    Category saladCategory = Category(name: 'Salad', icon: saladIcon, boxColor: listSequenceColors[0],);
+    Category cakeCategory = Category(name: 'Cake', icon: cakeIcon, boxColor: listSequenceColors[1],);
+    Category pieCategory = Category(name: 'Pie', icon: pieIcon, boxColor: listSequenceColors[0],);
+    Category pancakeCategory = Category(name: 'Pancake', icon: pancakeIcon, boxColor: listSequenceColors[1],);
+    Category smoothieCategory = Category(name: 'Smoothie', icon: smoothieIcon, boxColor: listSequenceColors[0],);
 
     categories.add(saladCategory);
     categories.add(cakeCategory);
