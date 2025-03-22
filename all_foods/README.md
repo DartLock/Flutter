@@ -1,20 +1,18 @@
 # all_foods
 
 ### Categories
+
+#### Status
+Ready.
+
+#### refactoring.
 Надо попробовать вынести ListView.saparated в отдельный блок,  
 то есть создать список заранее.
 
-Flutter Training
+### Popular
+#### Status
+Build.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Current.
+нужно внутри основых сolumn еще сделать column,
+но внтури него уже Row из трех боксов
