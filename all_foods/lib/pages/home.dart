@@ -4,6 +4,7 @@ import 'package:all_foods/pages/home/app_bar.dart';
 import 'package:all_foods/pages/home/search_bar.dart';
 import 'package:all_foods/pages/home/category.dart';
 import 'package:all_foods/pages/home/recommendations.dart';
+import 'package:all_foods/pages/home/popular.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
           // const SizedBox(height: 40,),
           category(),
           recommendations(),
+          popular(),
         ],
       ),
     );
