@@ -3,9 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:all_foods/models/category.dart';
 
 Column category() {
-  List<Category> categories = Category.getCategories();
+  List<Container> categories = Category.getCategories();
   Color colorBlack = Colors.black;
-  Color colorWhite = Colors.white;
 
   Padding categoryTitle = Padding( // Category Title
     padding: const EdgeInsets.only(top: 40, left: 20,),
@@ -36,39 +35,7 @@ Column category() {
           ),
           separatorBuilder: (context, index) => const SizedBox(width: 25,),
           itemBuilder: (context, index) { // Category Item Boxes
-            return Container( // Category Item Box
-              width: 100,
-              decoration: BoxDecoration(
-                color: categories[index].boxColor.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Column( // Category Child Sub Items
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container( // Category Child Sub Item
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: colorWhite,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: categories[index].icon,
-                    ),
-                  ),
-                  Text( // Category Child Sub Item Title
-                    textAlign: TextAlign.center,
-                    categories[index].title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: colorBlack,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-            );
+            return categories[index];
           },
         ),
       ),
