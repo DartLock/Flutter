@@ -44,7 +44,6 @@ class Popular {
   }
 
   static _buildContainer(popularElement) {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
     return Container( // Popular Item Box
       // width: 100,
       decoration: BoxDecoration(
@@ -63,15 +62,11 @@ class Popular {
           Text( // Popular Child Sub Item Title
             textAlign: TextAlign.center,
             popularElement.title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.black,
-              fontSize: 14,
+            style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,
             ),
           ),
         ],
       ),
     );
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
 }
