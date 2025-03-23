@@ -40,7 +40,8 @@ class Category {
       SvgPicture icon = SvgPicture.asset(categoryDataElement["asset"]);
       int colorIndex = index % 2;
 
-      // TODO: эту часть кода передават уже готовой.
+      // TODO: эту часть кода можно попробовать передавать уже готовой.
+      //   что бы сделать его одинаковым полностью, под интерфейс
       Category categoryElement = Category(title: categoryDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
 
       Container categoryContainer = _buildContainer(categoryElement);

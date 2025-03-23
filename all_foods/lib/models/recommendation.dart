@@ -56,7 +56,8 @@ class Recommendation {
 
       int colorIndex = index % 2;
 
-      // TODO: эту часть кода передават уже готовой.
+      // TODO: эту часть кода можно попробовать передавать уже готовой.
+      //   что бы сделать его одинаковым полностью, под интерфейс
       Recommendation recommendationElement = Recommendation(
         title: title,
         icon: icon,
