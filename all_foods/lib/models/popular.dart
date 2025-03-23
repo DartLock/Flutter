@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Popular {
-  String name;
+  String title;
   SvgPicture icon;
   Color boxColor;
   bool active;
 
-  Popular({required this.name, required this.icon, required this.boxColor, this.active = false,});
+  Popular({required this.title, required this.icon, required this.boxColor, this.active = false,});
 
   static List<Map<String, String>> _popularData() {
     return [
-      {"key": 'blueberry_pancake', "name": 'Blueberry Pancake', "asset": 'assets/icons/body/popular/blueberry_pancake.svg'},
-      {"key": 'lowfat_milk', "name": 'Lowfat Milk', "asset": 'assets/icons/body/popular/lowfat_milk.svg'},
-      {"key": 'salmon_nigiri', "name": 'Salmon Nigiri', "asset": 'assets/icons/body/popular/salmon_nigiri.svg'},
-      {"key": 'salad', "name": 'Salad', "asset": 'assets/icons/body/popular/salad.svg'},
+      {"key": 'blueberry_pancake', "title": 'Blueberry Pancake', "asset": 'assets/icons/body/popular/blueberry_pancake.svg'},
+      {"key": 'lowfat_milk',       "title": 'Lowfat Milk',       "asset": 'assets/icons/body/popular/lowfat_milk.svg'},
+      {"key": 'salmon_nigiri',     "title": 'Salmon Nigiri',     "asset": 'assets/icons/body/popular/salmon_nigiri.svg'},
+      {"key": 'salad',             "title": 'Salad',             "asset": 'assets/icons/body/popular/salad.svg'},
     ];
   }
 
@@ -33,7 +33,7 @@ class Popular {
     for (final (index, popularElement) in popularData.indexed) {
       SvgPicture icon = SvgPicture.asset(popularElement["asset"]);
       int colorIndex = index % 2;
-      popular.add(Popular(name: popularElement["name"], icon: icon, boxColor: listSequenceColors[colorIndex],));
+      popular.add(Popular(title: popularElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],));
     }
 
     return popular;

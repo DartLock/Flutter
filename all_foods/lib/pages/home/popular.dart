@@ -42,7 +42,7 @@ Column popular() {
                   ),
                   Text( // Popular Child Sub Item Title
                     textAlign: TextAlign.center,
-                    popular[index].name,
+                    popular[index].title,
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: colorBlack,
