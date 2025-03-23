@@ -22,10 +22,7 @@ Container searchBar() {
         fillColor: Colors.white,
         contentPadding: const EdgeInsets.all(15),
         hintText: 'search',
-        hintStyle: const TextStyle(
-          color: Color(0xC2CCCCCC),
-          fontSize: 14,
-        ),
+        hintStyle: const TextStyle(color: Color(0xC2CCCCCC), fontSize: 14,),
         prefixIcon: Padding(
           padding: const EdgeInsets.all(12),
           child: SvgPicture.asset("assets/icons/body/search_bar/zoom.svg"),
