@@ -76,6 +76,7 @@ flutter:
     - assets/icons/body/popular/salmon_nigiri.svg
     - assets/icons/body/popular/circle_arrow_right.svg
     - assets/icons/body/popular/lowfat_milk.svg
+    - assets/icons/body/popular/salad.svg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
