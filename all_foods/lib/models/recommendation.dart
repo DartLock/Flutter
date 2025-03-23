@@ -39,6 +39,7 @@ class Recommendation {
     ];
   }
 
+  // TODO: этот код повторяется поэтому он может быть Родительским
   static List<Container> getRecommendation() {
     List<Container> recommendations = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
@@ -55,6 +56,7 @@ class Recommendation {
 
       int colorIndex = index % 2;
 
+      // TODO: эту часть кода передават уже готовой.
       Recommendation recommendationElement = Recommendation(
         title: title,
         icon: icon,
@@ -71,6 +73,7 @@ class Recommendation {
     return recommendations;
   }
 
+  // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static Container _buildContainer(recommendation) {
     return Container( // Category Item Box
       width: 210,

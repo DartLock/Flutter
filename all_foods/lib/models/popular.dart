@@ -24,6 +24,7 @@ class Popular {
     return popularData.firstWhere((element) => element["key"] == key);
   }
 
+  // TODO: этот код повторяется поэтому он может быть Родительским
   static List<Container> getPopular() {
     List<Container> popular = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
@@ -34,7 +35,9 @@ class Popular {
       SvgPicture icon = SvgPicture.asset(popularDataElement["asset"]);
       int colorIndex = index % 2;
 
+      // TODO: эту часть кода передават уже готовой.
       Popular popularElement = Popular(title: popularDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
+
       Container popularContainer = _buildContainer(popularElement);
 
       popular.add(popularContainer);
@@ -43,6 +46,7 @@ class Popular {
     return popular;
   }
 
+  // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static _buildContainer(popularElement) {
     return Container( // Popular Item Box
       // width: 100,

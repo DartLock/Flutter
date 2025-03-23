@@ -29,6 +29,7 @@ class Category {
     return categoriesData.firstWhere((element) => element["key"] == key);
   }
 
+  // TODO: этот код повторяется поэтому он может быть Родительским
   static List<Container> getCategories() {
     List<Container> categories = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
@@ -39,7 +40,9 @@ class Category {
       SvgPicture icon = SvgPicture.asset(categoryDataElement["asset"]);
       int colorIndex = index % 2;
 
+      // TODO: эту часть кода передават уже готовой.
       Category categoryElement = Category(title: categoryDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
+
       Container categoryContainer = _buildContainer(categoryElement);
 
       categories.add(categoryContainer);
@@ -48,6 +51,7 @@ class Category {
     return categories;
   }
 
+  // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static _buildContainer(categoryElement) {
     Color colorWhite = Colors.white;
 
