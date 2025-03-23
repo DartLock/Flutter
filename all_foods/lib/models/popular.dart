@@ -103,12 +103,12 @@ class Popular {
                 Text( // Tille
                   textAlign: TextAlign.center,
                   popularElement.title,
-                  style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
+                  style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontSize: 14,),
                 ),
                 Text( // Info
                   textAlign: TextAlign.center,
                   popularElement.info,
-                  style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 12,),
+                  style: const TextStyle(fontWeight: FontWeight.w400, color: Color(0xFF929292), fontSize: 12,),
                 ),
               ],
             ),
