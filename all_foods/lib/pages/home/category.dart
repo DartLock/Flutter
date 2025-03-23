@@ -59,7 +59,7 @@ Column category() {
                   ),
                   Text( // Category Child Sub Item Title
                     textAlign: TextAlign.center,
-                    categories[index].name,
+                    categories[index].title,
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: colorBlack,

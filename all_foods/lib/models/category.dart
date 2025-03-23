@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Category {
-  String name;
+  String title;
   SvgPicture icon;
   Color boxColor;
 
   Category({
-    required this.name,
+    required this.title,
     required this.icon,
     required this.boxColor,
   });
 
   static List<Map<String, String>> _categoriesData() {
     return [
-      {"key": 'salad',       "name": 'Salad',       "asset": 'assets/icons/body/categories/salad.svg'},
-      {"key": 'oatmeal',     "name": 'Oatmeal',     "asset": 'assets/icons/body/categories/oatmeal.svg'},
-      {"key": 'canai_bread', "name": 'Canai Bread', "asset": 'assets/icons/body/categories/canai_bread.svg'},
-      {"key": 'pie',         "name": 'Pie',         "asset": 'assets/icons/body/categories/pie.svg'},
-      {"key": 'pancake',     "name": 'Pancake',     "asset": 'assets/icons/body/categories/pancake.svg'},
-      {"key": 'smoothie',    "name": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
+      {"key": 'salad',       "title": 'Salad',       "asset": 'assets/icons/body/categories/salad.svg'},
+      {"key": 'oatmeal',     "title": 'Oatmeal',     "asset": 'assets/icons/body/categories/oatmeal.svg'},
+      {"key": 'canai_bread', "title": 'Canai Bread', "asset": 'assets/icons/body/categories/canai_bread.svg'},
+      {"key": 'pie',         "title": 'Pie',         "asset": 'assets/icons/body/categories/pie.svg'},
+      {"key": 'pancake',     "title": 'Pancake',     "asset": 'assets/icons/body/categories/pancake.svg'},
+      {"key": 'smoothie',    "title": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
     ];
   }
 
@@ -38,7 +38,7 @@ class Category {
     for (final (index, categoryElement) in categoriesData.indexed) {
       SvgPicture icon = SvgPicture.asset(categoryElement["asset"]);
       int colorIndex = index % 2;
-      categories.add(Category(name: categoryElement["name"], icon: icon, boxColor: listSequenceColors[colorIndex],));
+      categories.add(Category(title: categoryElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],));
     }
 
     return categories;
