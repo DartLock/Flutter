@@ -64,8 +64,9 @@ flutter:
     - assets/icons/body/search_bar/filter.svg
     - assets/icons/body/search_bar/zoom.svg
     - assets/icons/body/categories/salad.svg
+    - assets/icons/body/categories/canai_bread.svg
+    - assets/icons/body/categories/oatmeal.svg
     - assets/icons/body/categories/pie.svg
-    - assets/icons/body/categories/cake.svg
     - assets/icons/body/categories/pancake.svg
     - assets/icons/body/categories/smoothie.svg
     - assets/icons/body/recommendations/canai_bread.svg
