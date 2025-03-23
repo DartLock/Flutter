@@ -1,5 +1,9 @@
 ## all_foods
 
+### Refactor issue.
+Можно в папке pages/home/* все привести к одному методу, потому что код один и тотже,
+отлечаются только title.
+
 ### Categories
 #### Status
 Ready.
