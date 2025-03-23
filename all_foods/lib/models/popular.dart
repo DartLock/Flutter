@@ -59,18 +59,18 @@ class Popular {
         color: popularElement.boxColor.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Row( // Popular Child Sub Items
+      child: Row(
         //mainAxisAlignment: MainAxisAlignment.start,
         // TODO: нужно нижнее отобразить как Row внутри которого будут Boxes, то есть горизонтально
         children: [
-          Container( // Popular Icon
+          Container( // Icon
             margin: const EdgeInsets.only(left: 20),
             width: 50,
             height: 50,
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
             child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
           ),
-          Container( // Popular Title
+          SizedBox( // Title
             width: 295,
             child: Text(
               textAlign: TextAlign.center,
@@ -78,7 +78,7 @@ class Popular {
               style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
             ),
           ),
-          Container( // Popular Arrow Button
+          Container( // Arrow Button
             width: 24,
             height: 24,
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
