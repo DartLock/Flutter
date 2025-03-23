@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:all_foods/models/category.dart';
 
 Column category() {
@@ -8,14 +7,7 @@ Column category() {
 
   Padding categoryTitle = Padding( // Category Title
     padding: const EdgeInsets.only(top: 40, left: 20,),
-    child: Text(
-      'Category',
-      style: TextStyle(
-        color: colorBlack,
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-      ),
-    ),
+    child: Text('Category', style: TextStyle(color: colorBlack, fontSize: 18, fontWeight: FontWeight.w600,),),
   );
 
   return Column( // Category
@@ -29,10 +21,7 @@ Column category() {
         child: ListView.separated(
           itemCount: categories.length,
           scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
-          ),
+          padding: const EdgeInsets.only(left: 20, right: 20,),
           separatorBuilder: (context, index) => const SizedBox(width: 25,),
           itemBuilder: (context, index) { // Category Item Boxes
             return categories[index];
