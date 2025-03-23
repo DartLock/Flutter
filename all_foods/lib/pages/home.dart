@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:all_foods/pages/home/app_bar.dart';
+import 'package:all_foods/pages/app_bar.dart';
 import 'package:all_foods/pages/home/search_bar.dart';
 import 'package:all_foods/pages/home/category.dart';
 import 'package:all_foods/pages/home/recommendations.dart';
