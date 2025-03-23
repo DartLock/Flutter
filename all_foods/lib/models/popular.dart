@@ -49,27 +49,40 @@ class Popular {
 
   // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static _buildContainer(popularElement) {
+    SvgPicture circleArrowRight = SvgPicture.asset('assets/icons/body/popular/circle_arrow_right.svg');
+
     return Container( // Popular Item Box
       // width: 100,
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(bottom: 10, top: 10),
       decoration: BoxDecoration(
         color: popularElement.boxColor.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Column( // Popular Child Sub Items
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row( // Popular Child Sub Items
+        //mainAxisAlignment: MainAxisAlignment.start,
         // TODO: нужно нижнее отобразить как Row внутри которого будут Boxes, то есть горизонтально
         children: [
           Container( // Popular Icon
+            margin: const EdgeInsets.only(left: 20),
             width: 50,
             height: 50,
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
             child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
           ),
-          Text( // Popular Title
-            textAlign: TextAlign.center,
-            popularElement.title,
-            style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,
+          Container( // Popular Title
+            width: 295,
+            child: Text(
+              textAlign: TextAlign.center,
+              popularElement.title,
+              style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
             ),
+          ),
+          Container( // Popular Arrow Button
+            width: 24,
+            height: 24,
+            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
+            child: circleArrowRight, // Icon imaging
           ),
         ],
       ),
