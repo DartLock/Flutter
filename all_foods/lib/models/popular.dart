@@ -3,18 +3,39 @@ import 'package:flutter_svg/svg.dart';
 
 class Popular {
   String title;
+  String info;
   SvgPicture icon;
   Color boxColor;
   bool active;
 
-  Popular({required this.title, required this.icon, required this.boxColor, this.active = false,});
+  Popular({required this.title, required this.info, required this.icon, required this.boxColor, this.active = false,});
 
   static List<Map<String, String>> _popularData() {
     return [
-      {"key": 'blueberry_pancake', "title": 'Blueberry Pancake', "asset": 'assets/icons/body/popular/blueberry_pancake.svg'},
-      {"key": 'lowfat_milk',       "title": 'Lowfat Milk',       "asset": 'assets/icons/body/popular/lowfat_milk.svg'},
-      {"key": 'salmon_nigiri',     "title": 'Salmon Nigiri',     "asset": 'assets/icons/body/popular/salmon_nigiri.svg'},
-      {"key": 'salad',             "title": 'Salad',             "asset": 'assets/icons/body/popular/salad.svg'},
+      {
+        "key": 'blueberry_pancake',
+        "title": 'Blueberry Pancake',
+        "asset": 'assets/icons/body/popular/blueberry_pancake.svg',
+        "info": "Easy | 30mins | 180kCal",
+      },
+      {
+        "key": 'lowfat_milk',
+        "title": 'Lowfat Milk',
+        "asset": 'assets/icons/body/popular/lowfat_milk.svg',
+        "info": "Easy | 30mins | 180kCal",
+      },
+      {
+        "key": 'salmon_nigiri',
+        "title": 'Salmon Nigiri',
+        "asset": 'assets/icons/body/popular/salmon_nigiri.svg',
+        "info": "Easy | 30mins | 180kCal",
+      },
+      {
+        "key": 'salad',
+        "title": 'Salad',
+        "asset": 'assets/icons/body/popular/salad.svg',
+        "info": "Easy | 30mins | 180kCal",
+      },
     ];
   }
 
@@ -37,7 +58,12 @@ class Popular {
 
       // TODO: эту часть кода можно попробовать передавать уже готовой.
       //   что бы сделать его одинаковым полностью, под интерфейс
-      Popular popularElement = Popular(title: popularDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
+      Popular popularElement = Popular(
+        title: popularDataElement["title"],
+        info: popularDataElement["info"],
+        icon: icon,
+        boxColor: listSequenceColors[colorIndex],
+      );
 
       Container popularContainer = _buildContainer(popularElement);
 
@@ -70,12 +96,21 @@ class Popular {
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
             child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
           ),
-          SizedBox( // Title
+          SizedBox( // Title & Info
             width: 295,
-            child: Text(
-              textAlign: TextAlign.center,
-              popularElement.title,
-              style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
+            child: Column(
+              children: [
+                Text( // Tille
+                  textAlign: TextAlign.center,
+                  popularElement.title,
+                  style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,),
+                ),
+                Text( // Info
+                  textAlign: TextAlign.center,
+                  popularElement.info,
+                  style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 12,),
+                ),
+              ],
             ),
           ),
           Container( // Arrow Button
