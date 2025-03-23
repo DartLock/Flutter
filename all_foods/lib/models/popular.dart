@@ -24,18 +24,54 @@ class Popular {
     return popularData.firstWhere((element) => element["key"] == key);
   }
 
-  static List<Popular> getPopular() {
-    List<Popular> popular = [];
+  static List<Container> getPopular() {
+    List<Container> popular = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
 
     List popularData = _popularData();
 
-    for (final (index, popularElement) in popularData.indexed) {
-      SvgPicture icon = SvgPicture.asset(popularElement["asset"]);
+    for (final (index, popularDataElement) in popularData.indexed) {
+      SvgPicture icon = SvgPicture.asset(popularDataElement["asset"]);
       int colorIndex = index % 2;
-      popular.add(Popular(title: popularElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],));
+
+      Popular popularElement = Popular(title: popularDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
+      Container popularContainer = _buildContainer(popularElement);
+
+      popular.add(popularContainer);
     }
 
     return popular;
+  }
+
+  static _buildContainer(popularElement) {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    return Container( // Popular Item Box
+      // width: 100,
+      decoration: BoxDecoration(
+        color: popularElement.boxColor.withValues(alpha: 0.3),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column( // Popular Child Sub Items
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container( // Popular Child Sub Item
+            width: 50,
+            height: 50,
+            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
+            child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
+          ),
+          Text( // Popular Child Sub Item Title
+            textAlign: TextAlign.center,
+            popularElement.title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+    );
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
 }
