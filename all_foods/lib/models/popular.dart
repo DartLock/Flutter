@@ -52,14 +52,15 @@ class Popular {
       ),
       child: Column( // Popular Child Sub Items
         mainAxisAlignment: MainAxisAlignment.center,
+        // TODO: нужно нижнее отобразить как Row внутри которого будут Boxes, то есть горизонтально
         children: [
-          Container( // Popular Child Sub Item
+          Container( // Popular Icon
             width: 50,
             height: 50,
             decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
             child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
           ),
-          Text( // Popular Child Sub Item Title
+          Text( // Popular Title
             textAlign: TextAlign.center,
             popularElement.title,
             style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.black, fontSize: 14,
