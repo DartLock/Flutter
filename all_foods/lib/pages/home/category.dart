@@ -17,11 +17,10 @@ Column category() {
       const SizedBox(height: 15,),
       SizedBox( // Category Main Row
         height: 120,
-        // color: Colors.green,
         child: ListView.separated(
+          padding: const EdgeInsets.only(left: 20, right: 20,),
           itemCount: categories.length,
           scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(left: 20, right: 20,),
           separatorBuilder: (context, index) => const SizedBox(width: 25,),
           itemBuilder: (context, index) { // Category Item Boxes
             return categories[index];
