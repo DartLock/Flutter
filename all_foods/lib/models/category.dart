@@ -12,30 +12,34 @@ class Category {
     required this.boxColor,
   });
 
+  static List<Map<String, String>> _categoriesData() {
+    return [
+      {"key": 'salad',       "name": 'Salad',       "asset": 'assets/icons/body/categories/salad.svg'},
+      {"key": 'oatmeal',     "name": 'Oatmeal',     "asset": 'assets/icons/body/categories/oatmeal.svg'},
+      {"key": 'canai_bread', "name": 'Canai Bread', "asset": 'assets/icons/body/categories/canai_bread.svg'},
+      {"key": 'pie',         "name": 'Pie',         "asset": 'assets/icons/body/categories/pie.svg'},
+      {"key": 'pancake',     "name": 'Pancake',     "asset": 'assets/icons/body/categories/pancake.svg'},
+      {"key": 'smoothie',    "name": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
+    ];
+  }
+
+  static Map getCategoryByKey(String key) {
+    List<Map<String, String>> categoriesData = _categoriesData();
+
+    return categoriesData.firstWhere((element) => element["key"] == key);
+  }
+
   static List<Category> getCategories() {
     List<Category> categories = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
 
-    SvgPicture saladIcon = SvgPicture.asset('assets/icons/body/categories/salad.svg');
-    SvgPicture oatmealIcon = SvgPicture.asset('assets/icons/body/categories/oatmeal.svg');
-    SvgPicture canaiBreadIcon = SvgPicture.asset('assets/icons/body/categories/canai_bread.svg');
-    SvgPicture pieIcon = SvgPicture.asset('assets/icons/body/categories/pie.svg');
-    SvgPicture pancakeIcon = SvgPicture.asset('assets/icons/body/categories/pancake.svg');
-    SvgPicture smoothieIcon = SvgPicture.asset('assets/icons/body/categories/smoothie.svg');
+    List categoriesData = _categoriesData();
 
-    Category saladCategory = Category(name: 'Salad', icon: saladIcon, boxColor: listSequenceColors[0],);
-    Category oatmealCategory = Category(name: 'Cake', icon: oatmealIcon, boxColor: listSequenceColors[1],);
-    Category canaiBreadCategory = Category(name: 'Cake', icon: canaiBreadIcon, boxColor: listSequenceColors[0],);
-    Category pieCategory = Category(name: 'Pie', icon: pieIcon, boxColor: listSequenceColors[1],);
-    Category pancakeCategory = Category(name: 'Pancake', icon: pancakeIcon, boxColor: listSequenceColors[0],);
-    Category smoothieCategory = Category(name: 'Smoothie', icon: smoothieIcon, boxColor: listSequenceColors[1],);
-
-    categories.add(saladCategory);
-    categories.add(oatmealCategory);
-    categories.add(canaiBreadCategory);
-    categories.add(pieCategory);
-    categories.add(pancakeCategory);
-    categories.add(smoothieCategory);
+    for (final (index, categoryElement) in categoriesData.indexed) {
+      SvgPicture icon = SvgPicture.asset(categoryElement["asset"]);
+      int colorIndex = index % 2;
+      categories.add(Category(name: categoryElement["name"], icon: icon, boxColor: listSequenceColors[colorIndex],));
+    }
 
     return categories;
   }
