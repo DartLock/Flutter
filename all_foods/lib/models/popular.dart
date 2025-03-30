@@ -68,12 +68,6 @@ class Popular {
     for (final (index, popularDataElement) in popularData.indexed) {
       SvgPicture icon = SvgPicture.asset(popularDataElement["icon_asset"], width: 65, height: 65,);
       SvgPicture iconRight = SvgPicture.asset(popularDataElement["icon_right_asset"], width: 30, height: 30,);
-      // Container iconRightContainer = Container( // Arrow Button
-      //   width: 24,
-      //   height: 24,
-      //   decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
-      //   child: iconRight, // Icon imaging
-      // );
 
       GestureDetector iconRightButton = GestureDetector(
         onTap: () {},
