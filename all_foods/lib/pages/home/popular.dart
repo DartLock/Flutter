@@ -15,18 +15,19 @@ Column popular() {
     children: [
       popularTitle,
       const SizedBox(height: 15,),
-      SizedBox( // Popular Main Row
-        height: 120,
+      SizedBox(
+        height: 200,
         child: ListView.separated(
-          padding: const EdgeInsets.only(left: 20, right: 20,),
           itemCount: popular.length,
-          scrollDirection: Axis.vertical,
-          separatorBuilder: (context, index) => const SizedBox(width: 25,),
+          shrinkWrap: true,
+          separatorBuilder: (context, index) => const SizedBox(height: 25,),
+          padding: const EdgeInsets.only(left: 20, right: 20,),
           itemBuilder: (context, index) { // Popular Item Boxes
             return popular[index];
           },
         ),
       ),
+
     ],
   );
 }

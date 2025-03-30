@@ -5,35 +5,49 @@ class Popular {
   String title;
   String info;
   SvgPicture icon;
+  GestureDetector iconRightButton;
   Color boxColor;
   bool active;
 
-  Popular({required this.title, required this.info, required this.icon, required this.boxColor, this.active = false,});
+  Popular({
+    required this.title,
+    required this.info,
+    required this.icon,
+    required this.iconRightButton,
+    required this.boxColor,
+    this.active = false,
+  });
 
   static List<Map<String, String>> _popularData() {
+    String iconRightAsset = 'assets/icons/body/popular/circle_arrow_right.svg';
+
     return [
       {
         "key": 'blueberry_pancake',
         "title": 'Blueberry Pancake',
-        "asset": 'assets/icons/body/popular/blueberry_pancake.svg',
+        "icon_asset": 'assets/icons/body/popular/blueberry_pancake.svg',
+        "icon_right_asset": iconRightAsset,
         "info": "Easy | 30mins | 180kCal",
       },
       {
         "key": 'lowfat_milk',
         "title": 'Lowfat Milk',
-        "asset": 'assets/icons/body/popular/lowfat_milk.svg',
+        "icon_asset": 'assets/icons/body/popular/lowfat_milk.svg',
+        "icon_right_asset": iconRightAsset,
         "info": "Easy | 30mins | 180kCal",
       },
       {
         "key": 'salmon_nigiri',
         "title": 'Salmon Nigiri',
-        "asset": 'assets/icons/body/popular/salmon_nigiri.svg',
+        "icon_asset": 'assets/icons/body/popular/salmon_nigiri.svg',
+        "icon_right_asset": iconRightAsset,
         "info": "Easy | 30mins | 180kCal",
       },
       {
         "key": 'salad',
         "title": 'Salad',
-        "asset": 'assets/icons/body/popular/salad.svg',
+        "icon_asset": 'assets/icons/body/popular/salad.svg',
+        "icon_right_asset": iconRightAsset,
         "info": "Easy | 30mins | 180kCal",
       },
     ];
@@ -49,11 +63,23 @@ class Popular {
   static List<Container> getPopular() {
     List<Container> popular = [];
     List<Color> listSequenceColors = [const Color(0xFF9CD6FF), const Color(0xFFE3D5FF)];
-
     List popularData = _popularData();
 
     for (final (index, popularDataElement) in popularData.indexed) {
-      SvgPicture icon = SvgPicture.asset(popularDataElement["asset"]);
+      SvgPicture icon = SvgPicture.asset(popularDataElement["icon_asset"], width: 65, height: 65,);
+      SvgPicture iconRight = SvgPicture.asset(popularDataElement["icon_right_asset"], width: 30, height: 30,);
+      // Container iconRightContainer = Container( // Arrow Button
+      //   width: 24,
+      //   height: 24,
+      //   decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
+      //   child: iconRight, // Icon imaging
+      // );
+
+      GestureDetector iconRightButton = GestureDetector(
+        onTap: () {},
+        child: iconRight,
+      );
+
       int colorIndex = index % 2;
 
       // TODO: эту часть кода можно попробовать передавать уже готовой.
@@ -62,11 +88,11 @@ class Popular {
         title: popularDataElement["title"],
         info: popularDataElement["info"],
         icon: icon,
+        iconRightButton: iconRightButton,
         boxColor: listSequenceColors[colorIndex],
       );
 
       Container popularContainer = _buildContainer(popularElement);
-
       popular.add(popularContainer);
     }
 
@@ -75,50 +101,43 @@ class Popular {
 
   // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static _buildContainer(popularElement) {
-    SvgPicture circleArrowRight = SvgPicture.asset('assets/icons/body/popular/circle_arrow_right.svg');
-
     return Container( // Popular Item Box
-      // width: 100,
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.only(bottom: 10, top: 10),
+      height: 100,
+      //padding: const EdgeInsets.only(bottom: 15, top: 15),
       decoration: BoxDecoration(
         color: popularElement.boxColor.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(16),
+        // boxShadow: const [
+        //   BoxShadow(
+        //     color: Color(0xFF7A7A7A),
+        //     offset: Offset(0, 0),
+        //     blurRadius: 40,
+        //     spreadRadius: 0
+        //   ),
+        // ],
       ),
       child: Row(
-        //mainAxisAlignment: MainAxisAlignment.start,
-        // TODO: нужно нижнее отобразить как Row внутри которого будут Boxes, то есть горизонтально
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container( // Icon
-            margin: const EdgeInsets.only(left: 20),
-            width: 50,
-            height: 50,
-            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
-            child: Padding(padding: const EdgeInsets.all(8.0), child: popularElement.icon,), // Icon imaging
+          popularElement.icon,
+          Column( // Title & Info
+            mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text( // Tille
+                textAlign: TextAlign.center,
+                popularElement.title,
+                style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontSize: 16,),
+              ),
+              Text( // Info
+                textAlign: TextAlign.center,
+                popularElement.info,
+                style: const TextStyle(fontWeight: FontWeight.w400, color: Color(0xFF929292), fontSize: 13,),
+              ),
+            ],
           ),
-          SizedBox( // Title & Info
-            width: 295,
-            child: Column(
-              children: [
-                Text( // Tille
-                  textAlign: TextAlign.center,
-                  popularElement.title,
-                  style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black, fontSize: 14,),
-                ),
-                Text( // Info
-                  textAlign: TextAlign.center,
-                  popularElement.info,
-                  style: const TextStyle(fontWeight: FontWeight.w400, color: Color(0xFF929292), fontSize: 12,),
-                ),
-              ],
-            ),
-          ),
-          Container( // Arrow Button
-            width: 24,
-            height: 24,
-            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle,), // Icon border style
-            child: circleArrowRight, // Icon imaging
-          ),
+          // iconRightButton,
+          popularElement.iconRightButton,
         ],
       ),
     );
