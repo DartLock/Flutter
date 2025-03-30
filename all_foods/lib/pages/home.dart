@@ -17,7 +17,6 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           searchBar(),
-          // const SizedBox(height: 40,),
           category(),
           recommendations(),
           popular(),
@@ -26,28 +25,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-//
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: appBar(),
-//       body: Center(
-//         child: SingleChildScrollView(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               searchBar(),
-//               // const SizedBox(height: 40,),
-//               category(),
-//               recommendations(),
-//               popular(),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
