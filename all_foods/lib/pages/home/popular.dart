@@ -10,7 +10,7 @@ Column popular() {
     child: Text('Popular', style: TextStyle(color: colorBlack, fontSize: 18, fontWeight: FontWeight.w600,),),
   );
 
-  return Column( // Popular
+  return Column( // Popular Section
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       popularTitle,
