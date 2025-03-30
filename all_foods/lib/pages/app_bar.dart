@@ -13,17 +13,8 @@ class AppBarMenuBox extends Container {
 
 AppBar appBar() {
   BoxDecoration decoration = BoxDecoration(
-    color: const Color(0xFFC6C6C6),
+    color: const Color(0xFFFFFFFF),
     borderRadius: BorderRadius.circular(10),
-    boxShadow: const [
-      BoxShadow(
-        color: Color(0xC2CCCCCC),
-        offset: Offset(0, 1),
-        blurRadius: 1,
-        spreadRadius: 1,
-        blurStyle: BlurStyle.normal,
-      ),
-    ],
   );
 
   Container appBarArrowLeft = Container(

@@ -7,26 +7,47 @@ import 'package:all_foods/pages/home/recommendations.dart';
 import 'package:all_foods/pages/home/popular.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              searchBar(),
-              // const SizedBox(height: 40,),
-              category(),
-              recommendations(),
-              popular(),
-            ],
-          ),
-        ),
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          searchBar(),
+          // const SizedBox(height: 40,),
+          category(),
+          recommendations(),
+          popular(),
+        ],
       ),
     );
   }
 }
+//
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: appBar(),
+//       body: Center(
+//         child: SingleChildScrollView(
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               searchBar(),
+//               // const SizedBox(height: 40,),
+//               category(),
+//               recommendations(),
+//               popular(),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

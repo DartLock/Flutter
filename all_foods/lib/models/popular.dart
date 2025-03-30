@@ -101,21 +101,18 @@ class Popular {
 
   // TODO: этот код повторяется но не сильно, поэтому он может быть резализованным от Интерфейсна
   static _buildContainer(popularElement) {
+    BoxDecoration activeDecoration = BoxDecoration(
+      color: const Color(0xFFFFFFFF),// popularElement.boxColor,//.withValues(alpha: 0.3),
+      borderRadius: BorderRadius.circular(16),
+      boxShadow: const [BoxShadow(color: Color(0xFF7A7A7A), offset: Offset(0, 0), blurRadius: 40, spreadRadius: 0),],
+    );
+
+    popularElement.active = popularElement.title == 'Lowfat Milk' ? true : false;
+
     return Container( // Popular Item Box
       height: 100,
-      //padding: const EdgeInsets.only(bottom: 15, top: 15),
-      decoration: BoxDecoration(
-        color: popularElement.boxColor.withValues(alpha: 0.3),
-        borderRadius: BorderRadius.circular(16),
-        // boxShadow: const [
-        //   BoxShadow(
-        //     color: Color(0xFF7A7A7A),
-        //     offset: Offset(0, 0),
-        //     blurRadius: 40,
-        //     spreadRadius: 0
-        //   ),
-        // ],
-      ),
+      decoration: popularElement.active ? activeDecoration : null,
+      margin: const EdgeInsets.only(left: 20, right: 20,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
