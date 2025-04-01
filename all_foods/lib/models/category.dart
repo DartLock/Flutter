@@ -20,6 +20,9 @@ class Category {
       {"key": 'pie',         "title": 'Pie',         "asset": 'assets/icons/body/categories/pie.svg'},
       {"key": 'pancake',     "title": 'Pancake',     "asset": 'assets/icons/body/categories/pancake.svg'},
       {"key": 'smoothie',    "title": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
+      {"key": 'smoothie',    "title": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
+      {"key": 'smoothie',    "title": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
+      {"key": 'smoothie',    "title": 'Smoothie',    "asset": 'assets/icons/body/categories/smoothie.svg'},
     ];
   }
 

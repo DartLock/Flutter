@@ -36,6 +36,18 @@ class Recommendation {
         "info": "Easy | 30mins | 180kCal",
         "asset": 'assets/icons/body/recommendations/fruit_cake.svg'
       },
+      {
+        "key": 'fruit_cake',
+        "title": 'Fruit Cake',
+        "info": "Easy | 30mins | 180kCal",
+        "asset": 'assets/icons/body/recommendations/fruit_cake.svg'
+      },
+      {
+        "key": 'fruit_cake',
+        "title": 'Fruit Cake',
+        "info": "Easy | 30mins | 180kCal",
+        "asset": 'assets/icons/body/recommendations/fruit_cake.svg'
+      },
     ];
   }
 

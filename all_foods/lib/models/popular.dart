@@ -50,6 +50,20 @@ class Popular {
         "icon_right_asset": iconRightAsset,
         "info": "Easy | 30mins | 180kCal",
       },
+      {
+        "key": 'salad',
+        "title": 'Salad',
+        "icon_asset": 'assets/icons/body/popular/salad.svg',
+        "icon_right_asset": iconRightAsset,
+        "info": "Easy | 30mins | 180kCal",
+      },
+      {
+        "key": 'salad',
+        "title": 'Salad',
+        "icon_asset": 'assets/icons/body/popular/salad.svg',
+        "icon_right_asset": iconRightAsset,
+        "info": "Easy | 30mins | 180kCal",
+      },
     ];
   }
 
