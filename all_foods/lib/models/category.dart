@@ -45,7 +45,11 @@ class Category {
 
       // TODO: эту часть кода можно попробовать передавать уже готовой.
       //   что бы сделать его одинаковым полностью, под интерфейс
-      Category categoryElement = Category(title: categoryDataElement["title"], icon: icon, boxColor: listSequenceColors[colorIndex],);
+      Category categoryElement = Category(
+        title: categoryDataElement["title"],
+        icon: icon,
+        boxColor: listSequenceColors[colorIndex],
+      );
 
       Container categoryContainer = _buildContainer(categoryElement);
 

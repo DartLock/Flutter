@@ -6,21 +6,25 @@ import 'package:all_foods/pages/home/recommendations.dart';
 import 'package:all_foods/pages/home/popular.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  late ListView bodyListView;
+
+  HomePage({super.key}) {
+    bodyListView = ListView(
+      children: [
+        searchBar(),
+        category(),
+        recommendations(),
+        popular(),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          searchBar(),
-          category(),
-          recommendations(),
-          popular(),
-        ],
-      ),
+      body: bodyListView,
     );
   }
 }

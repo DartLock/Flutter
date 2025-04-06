@@ -10,23 +10,22 @@ Column category() {
     child: Text('Category', style: TextStyle(color: colorBlack, fontSize: 18, fontWeight: FontWeight.w600,),),
   );
 
+  ListView listView = ListView.separated(
+    padding: const EdgeInsets.only(left: 20, right: 20,),
+    itemCount: categories.length,
+    scrollDirection: Axis.horizontal,
+    separatorBuilder: (context, index) => const SizedBox(width: 25,),
+    itemBuilder: (context, index) { // Category Item Boxes
+      return categories[index];
+    },
+  );
+
   return Column( // Category
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       categoryTitle,
       const SizedBox(height: 15,),
-      SizedBox( // Category Main Row
-        height: 120,
-        child: ListView.separated(
-          padding: const EdgeInsets.only(left: 20, right: 20,),
-          itemCount: categories.length,
-          scrollDirection: Axis.horizontal,
-          separatorBuilder: (context, index) => const SizedBox(width: 25,),
-          itemBuilder: (context, index) { // Category Item Boxes
-            return categories[index];
-          },
-        ),
-      ),
+      SizedBox(height: 120, child: listView,), // Category Main Row
     ],
   );
 }
