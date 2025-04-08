@@ -43,6 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+all_foods/android/build/
 
 all_foods/linux/flutter/generated_plugin_registrant.h
 all_foods/linux/flutter/generated_plugins.cmake
