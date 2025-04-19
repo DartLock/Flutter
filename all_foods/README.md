@@ -1,5 +1,8 @@
 ## all_foods
 
+### SSH
+`eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa_linux_msi`
+
 ### Refactor issue.
 Можно в папке pages/home/* все привести к одному методу, потому что код один и тотже,
 отлечаются только title.
